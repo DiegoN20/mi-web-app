@@ -8,10 +8,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./menu-lista.component.css']
 })
 export class MenuListaComponent implements OnInit, OnDestroy {
-  @Output() menuToogle = new EventEmitter<void>();
+  @Output() menuToggle = new EventEmitter<void>();
 
-  estadoUsuario: Boolean;
-  usuarioSubscription: Subscription;
+  estadoUsuario!: Boolean;
+  usuarioSubscription!: Subscription;
 
   constructor(private seguridadService: SeguridadService) { }
 
@@ -22,7 +22,7 @@ export class MenuListaComponent implements OnInit, OnDestroy {
   }
 
   onCerrarMenu(){
-    this.menuToogle.emit();
+    this.menuToggle.emit();
   }
 
   terminarSesionMenu(){

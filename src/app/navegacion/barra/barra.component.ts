@@ -9,8 +9,8 @@ import { Subscription } from 'rxjs';
 })
 export class BarraComponent implements OnInit, OnDestroy {
   @Output() menuToggle= new EventEmitter<void>();
-  estadoUsuario: Boolean;
-  usuarioSubscription: Subscription;
+  estadoUsuario!: Boolean;
+  usuarioSubscription!: Subscription;
 
   constructor(private seguridadServicio: SeguridadService) { }
 
