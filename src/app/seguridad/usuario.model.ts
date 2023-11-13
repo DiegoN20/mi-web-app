@@ -3,6 +3,6 @@ export interface Usuario{
   apellidos: String;
   username: String;
   email: String;
-  usuarioID: String;
+  usuarioId: String;
   password: String;
 }

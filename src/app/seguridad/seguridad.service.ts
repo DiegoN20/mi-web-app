@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SeguridadService {
   seguridadCambio = new Subject<boolean>();
-  private usuario: Usuario;
+
+  private usuario: Usuario | null = null;
 
   constructor(private router: Router){
 
@@ -16,7 +17,7 @@ export class SeguridadService {
   registrarUsuario(usr: Usuario) {
     this.usuario = {
       email: usr.email,
-      usuarioID: Math.round(Math.random() * 10000).toString(),
+      usuarioId: Math.round(Math.random() * 10000).toString(),
       nombre: usr.nombre,
       apellidos: usr.apellidos,
       username: usr.username,
@@ -30,7 +31,7 @@ export class SeguridadService {
   login(loginData: LoginData) {
     this.usuario = {
       email: loginData.email,
-      usuarioID: Math.round(Math.random() * 10000).toString(),
+      usuarioId: Math.round(Math.random() * 10000).toString(),
       nombre: '',
       apellidos: '',
       username: '',
