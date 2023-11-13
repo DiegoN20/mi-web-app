@@ -15,12 +15,13 @@ export class SeguridadRouter implements CanActivate {
     private seguridadService: SeguridadService,
     private router: Router
   ) {}
-
-  CanActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     if (this.seguridadService.onSesion()) {
       return true;
     } else {
       this.router.navigate(['/login']);
     }
+    throw new Error('Method not implemented.');
   }
+
 }

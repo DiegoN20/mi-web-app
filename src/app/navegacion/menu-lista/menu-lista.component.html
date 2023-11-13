@@ -11,10 +11,8 @@
     <mat-icon>login</mat-icon>
     <span class="navegation-list-label">Login</span>
   </a>
-  <mat-list-item>
-    <button mat-icon-button (click)="terminarSesionMenu()" *ngIf="estadoUsuario">
-      <mat-icon>Eject</mat-icon>
-      <span class="navegation-list-label">Salir</span>
-    </button>
-  </mat-list-item>
+  <a mat-list-item (click)="terminarSesionMenu()" *ngIf="estadoUsuario">
+    <mat-icon>eject</mat-icon>
+    <span class="navegation-list-label">Salir</span>
+  </a>
 </mat-nav-list>
